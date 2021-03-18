@@ -3,6 +3,7 @@ package com.zolotukhin.spring.aop.aspects;
 import com.zolotukhin.spring.aop.Student;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -33,6 +34,14 @@ public class UniversityLoggingAspect {
 
 		System.out.println("afterReturningGetStudentsAdvice: логируем получение " +
 				"списка студентов после работы методом getStudents");
+
+	}
+
+	@AfterThrowing(pointcut = "execution(* getStudents())",
+	throwing = "exception")
+	public void afterThrowingGetStudents(Throwable exception){
+		System.out.println("afterThrowingGetStudents: " +
+				"ловим выброс исключение " + exception);
 
 	}
 }
