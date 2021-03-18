@@ -12,7 +12,7 @@ public class SecurityAspect {
 
 	@Before("com.zolotukhin.spring.aop.aspects.MyPointcuts.allAddMethods()")
 	public void beforeAddSecurityAdvice(){
-		System.out.println("beforeGetSecurityAdvice: " +
+		System.out.println("beforeAddSecurityAdvice: " +
 			"проверка прав на получении книги/журнала");
 		System.out.println("----------------------------------");
 	}
