@@ -1,4 +1,4 @@
-package com.zolotukhin.spring.hibernatw_test2.entity;
+package com.zolotukhin.spring.hibernate_test2.entity;
 
 import javax.persistence.*;
 
